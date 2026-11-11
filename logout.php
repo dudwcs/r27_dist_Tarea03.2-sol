@@ -6,6 +6,7 @@ session_start();
 $_SESSION = [];
 
 // Eliminar la cookie de sesión del navegador
+//Si se usa cookie para el id de sesión
 if (ini_get("session.use_cookies")) {
     $params = session_get_cookie_params();
 
