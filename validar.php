@@ -23,14 +23,22 @@ if (
 $username = $_POST['usuario'];
 $password = $_POST['password'];
 
-// Buscar el usuario del sistema de persistencia
-$usuario = getUsuarioByUserName($username);
+try {
+     // Iniciar la sesión
+    session_start();
+    
+    $usuario = getUsuarioByUserName($username);
+} catch (Exception $e) {
+    error_log("Error al consultar el usuario: " . $e->getMessage());
+    $_SESSION['error_login'] = "Error al consultar el usuario. Por favor, inténtelo de nuevo más tarde.";
+    header("Location: login.php");
+    exit;
+}
 
 // Comprobar las credenciales
 if ($usuario !== null && password_verify($password, $usuario['password'])) {
 
-    // Iniciar la sesión
-    session_start();
+   
 
 
     // Guardar la identidad del usuario
