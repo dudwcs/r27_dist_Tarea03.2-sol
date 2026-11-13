@@ -10,9 +10,10 @@ function getUsuarioByUserName($username)
         // Preparar una consulta para buscar el usuario por su nombre
         // Solo se recuperan el identificador, el nombre de usuario
         // y el hash de su contraseña
-        $sql = "SELECT id, usuario, password
-                FROM usuarios
-                WHERE usuario = :usuario";
+        $sql = "SELECT u.id, u.usuario, u.password, r.nombre AS rol_nombre
+                FROM usuarios u
+                join roles r on u.id_rol = r.id
+                WHERE u.usuario = :usuario";
 
         $stmt = $conexion->prepare($sql);
 

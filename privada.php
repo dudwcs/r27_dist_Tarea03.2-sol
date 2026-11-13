@@ -24,6 +24,7 @@ if (!isset($_SESSION['id_usuario'])) {
             <div class="col-md-6">
                 <div class="alert alert-success">
                     <h1 class="h4">Bienvenido/a, <?= htmlspecialchars($_SESSION['usuario']) ?></h1>
+                    <h2>Rol: <?= htmlspecialchars($_SESSION['rol']) ?></h2>
                     <p class="mb-0">Se ha iniciado sesión correctamente.</p>
                 </div>
 
