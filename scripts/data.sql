@@ -32,4 +32,4 @@ INSERT INTO roles (id, nombre) VALUES
 -- Insertar los usuarios
 INSERT INTO usuarios (id, usuario, password, id_rol) VALUES
     (1, 'ana', '$2y$10$EUH/iN3x7y3VZq/20qE/WOUBb3TGRtC1629TKz9q5QZqR87H6xVNe', 1),
-    (2, 'pedro', 'HASH_DE_LA_CONTRASEÑA', 2);
+    (2, 'pedro', '$2y$10$PQ0nGOke5DnlUldSfQR8ceLC75YKXwq6wp4FPAnKsmhnhIvfTg1/2', 2);
